@@ -16,7 +16,6 @@ export default function Home() {
         alt="Pict"
         />
       </div>
-      <h1>test</h1>
     </div>
   );
 }

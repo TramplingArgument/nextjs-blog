@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,31 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* ---------- NAVBAR ---------- */}
+        <nav className="bg-white border-b">
+          <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+            
+            {/* Logo */}
+            <Link href="/" className="text-xl font-semibold text-indigo-600">
+              Tugas Tracker
+            </Link>
+
+            {/* Menu */}
+            <div className="space-x-3">
+              <Link
+                href="/"
+                className="text-sm text-gray-600 hover:text-indigo-600"
+              >
+                Mata Kuliah
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        {/* ---------- MAIN CONTENT ---------- */}
+        <main className="max-w-5xl mx-auto px-4 py-8">
+          {children}
+        </main>
       </body>
     </html>
   );
